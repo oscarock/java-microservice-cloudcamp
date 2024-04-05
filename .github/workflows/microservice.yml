@@ -2,7 +2,7 @@ name: "CI"
 on: push
 
 permissions:
-  packages: read
+  packages: write
 
 jobs:
   create_image:
