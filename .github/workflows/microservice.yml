@@ -3,6 +3,7 @@ on: push
 
 permissions:
   packages: write
+  contents: read
 
 jobs:
   create_image:
