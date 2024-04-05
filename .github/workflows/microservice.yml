@@ -1,0 +1,20 @@
+name: "CI"
+on: push
+
+jobs:
+  create_image:
+    name: "Create image"
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4.1.1
+
+      - name: build
+        run: |
+          chmod +x gradlew
+          ./gradlew build
+
+      - name: docker build
+        run: |
+          docker build -t microservice:1.0.0 .
